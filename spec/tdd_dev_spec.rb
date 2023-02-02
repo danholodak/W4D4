@@ -23,3 +23,12 @@ describe '#my_transpose()' do
     end
 
 end
+
+describe '#stock_picker()' do
+    let(:prices) {[100,12,1,15,33,5,5,2,10]}
+    context 'buy low sell high' do
+        it 'should return the pair of days where buying on day 1 and selling on day 2 will yeild highest return' do
+            expect(stock_picker(prices)).to eq([2,4])
+        end
+    end
+end

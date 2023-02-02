@@ -35,3 +35,16 @@ def my_transpose(rows)
 
 end
 
+def stock_picker(array)
+    days = nil
+    profit = array[1] - array[0]
+    array.each_with_index do |ele, idx|
+        array.each_with_index do |ele2, idx2|
+            if ele2 - ele > profit && idx2 > idx
+                days = [idx, idx2]
+                profit = ele2 - ele
+            end
+        end
+    end
+    return days
+end
