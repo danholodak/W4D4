@@ -32,3 +32,36 @@ describe '#stock_picker()' do
         end
     end
 end
+
+describe 'Game' do
+    subject(:hanoi) {Game.new}
+    describe '#initialize' do
+        it 'should create a new set of towers, with the first tower occupied by blocks of descending size, and the other two towers empty' do
+            expect(hanoi.towers).to eq([[3,2,1],[],[]])
+        end
+    end
+
+    describe '#move()' do
+    # before(:each) {hanoi = Game.new}
+        it "should take the top element from starting position, and add it to ending position. EZ" do
+            expect(hanoi.move(0, 2)).to eq([[3,2],[],[1]])
+            expect(hanoi.move(0, 1)).to eq([[3],[2],[1]])
+        end
+    end
+
+    
+
+end
+
+
+#class Game
+#2d array for towers
+#def init
+#getters setters
+#arr[0] has 3 items
+#arr[1] and arr [] empty
+#arrs are stacks, push and pop
+#play loop (until won, move)
+#move needs beginning and end pos, prevents big discs placed on smaller discs
+#gets input- method gets input and passes to #move
+#won? returns false unless arr [0] and [1] empty, arr[2].length == 3

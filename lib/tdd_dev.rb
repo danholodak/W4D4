@@ -48,3 +48,18 @@ def stock_picker(array)
     end
     return days
 end
+
+class Game
+
+    attr_reader :towers
+
+    def initialize
+        @towers = [[3,2,1],[],[]]
+    end
+
+    def move(n1, n2)
+        towers[n2].push(towers[n1].pop)
+        return towers.dup
+    end
+
+end
