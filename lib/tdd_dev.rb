@@ -7,3 +7,17 @@ def my_uniq(arr)
     end
     new_arr
 end
+
+class Array
+
+    def two_sum
+        array = []
+        self.each_with_index do |ele, idx|
+            self.each_with_index do |subele, subidx|
+                array << [idx, subidx] if subidx > idx && ele + subele == 0
+            end
+        end
+        array
+    end
+
+end
