@@ -49,6 +49,20 @@ describe 'Game' do
         end
     end
 
+    describe 'won?' do
+    
+        it 'should return true if the third tower has all 3 discs stacked smallest on top of largest' do
+            allow(hanoi).to receive(:towers).and_return([[],[],[3,2,1]])
+            expect(hanoi.won?).to be true
+        end
+
+        it 'should return false if otherwise' do
+            expect(hanoi.won?).to be false
+        end
+
+    
+    end
+
     
 
 end
