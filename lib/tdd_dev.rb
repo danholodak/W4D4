@@ -21,3 +21,17 @@ class Array
     end
 
 end
+
+
+def my_transpose(rows)
+    cols = []
+    rows.length.times {cols << Array.new}
+    rows.each do |row|
+        row.each_with_index do |ele, i|
+            cols[i] << ele
+        end
+    end
+    cols
+
+end
+
